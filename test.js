@@ -38,13 +38,11 @@ app.post('/api/products/search', function(request, response) {
     var counter = 2;
     Find.finder(function(givenName)
     {
-        respArr.push(Find.resarr);
-        counter--;
-        if(counter === 0){
-            response.send(respArr);
-            }
-        console.log(respArr);
-        return module.exports;
+        opHelper.execute('ItemSearch', {
+        'SearchIndex': 'All',
+        'Keywords': givenName,
+        'ResponseGroup': 'ItemAttributes,Offers'
+        })
     }) 
 });
 
