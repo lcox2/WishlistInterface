@@ -1,7 +1,7 @@
 var amazonapi = require('amdefine');
 
 
-var Finder = require('./FindingItAll.js')
+var Find = require('./FindingItAll.js')
 
 
 var OperationHelper = require('apac').OperationHelper;
@@ -36,15 +36,16 @@ app.post('/api/products/search', function(request, response) {
     var respArr = [];
     var givenName = request.body.name;
     var counter = 2;
-    Finder.finder(request.body.name)
-
-    console.log("Final object list is: " , +resarr[0].id);
-    respArr.push(resarr);
-    counter--;
-    if(counter === 0){
-        result.send(respArr);
-        }
-    return module.exports;
+    Find.finder(function(givenName)
+    {
+        respArr.push(Find.resarr);
+        counter--;
+        if(counter === 0){
+            response.send(respArr);
+            }
+        console.log(respArr);
+        return module.exports;
+    }) 
 });
 
 app.listen(port, function(){

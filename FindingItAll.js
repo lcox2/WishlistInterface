@@ -30,7 +30,7 @@ module.exports = {
         'ResponseGroup': 'ItemAttributes,Offers,Images'
     }).then((response) => {
 
-        var amazonapi = response.result.ItemSearchResponse.Items.Item;
+        var arr = response.result.ItemSearchResponse.Items.Item;
 
         function data() {
             this.name = "Na";
@@ -56,7 +56,7 @@ module.exports = {
                     resarr[index].price = ("Price: ", arr[index].ItemAttributes.ListPrice.FormattedPrice);
                 }
                 else {
-
+                    Offer = undefined
                 }
 
                 if (arr[index].MediumImage != undefined) {
@@ -79,7 +79,7 @@ module.exports = {
         else {
             deferred.reject();
         }
-    });
+    }, 5000);
 
 
     return deferred.promise;
