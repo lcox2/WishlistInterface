@@ -36,24 +36,20 @@ block scripts
 
             $.post('/api/products/search', returnSearchedName, function(response){
                 
-                console.log('Am here now k');
-                console.log('response: ' + response);
-                console.log('response[0].id: ' + response[0].id);
+                var test = Find.finder(returnSearchedName)
 
-                for (i = 0; i < response.length; i++)
-                {
-                    if (i === 0)
-                    {
-                        outputDisplay.innerHTML = "";
-                    }
-                    var insertHtml = "AMAZON ITEM" + (i + 1) + "\n";
-                    insertHtml += "ASIN: " + response[i].id + "\n";
-                    insertHtml += "NAME: " + response[i].name + "\n";
-                    insertHtml += "PRICE" + response[i].price + "\n";
-                    insertHtml += "CATEGORY" + response[i].category + "\n";
-                    insertHtml += "URL" + response[i].url + "\n";
-                    outputDisplay.innerHTML += insertHtml;
-                }
+                test.then(function(arr){
+                    outputDisplay.append(arr[0].name);
+                    outputDisplay.append(arr[0].price);
+
+                    outputDisplay.append(arr[1].name);
+                    outputDisplay.append(arr[1].price);
+
+                    outputDisplay.append(arr[2].name);
+                    outputDisplay.append(arr[2].price);
+                }).catch(function(){
+
+                })
                 console.log('test?');
             });
         })
