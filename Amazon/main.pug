@@ -1,0 +1,23 @@
+//- This is a comment
+
+extends layout
+
+block content
+    .search-area
+        .jumbotron
+            h2 Search button location
+            p This is the zone for putting the search bar in
+            input(type="text", name=searchin, id=MoneyBaby, autocomplete="off")
+            #search.btn.btn-primary(type="submit") Search
+        h2 This is where the various products will append to
+
+block scripts
+     script. 
+         $('#search').on('click', function(){
+             console.log('Fire the Torpedos')
+ 
+             var search = MoneyBaby;
+             $.post('/wishlistinterface/index.js', search, function(finder){
+                 console.log(finder);
+             });
+         })
