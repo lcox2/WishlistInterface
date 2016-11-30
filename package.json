@@ -1,0 +1,22 @@
+{
+    "name": "wishlistinterface",
+    "version": "1.0.0",
+    "description": "Wishlist Front end",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lcox2/WishlistInterface.git"
+    },
+    "author": "Levi Cox, John Harper, Robert Moore",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/lcox2/WishlistInterface.git/issues"
+    },
+    "homepage": "https://github.com/lcox2/WishlistInterface.git",
+    "dependencies": {
+        
+    }
+}
