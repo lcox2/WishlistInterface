@@ -5,19 +5,57 @@ extends layout
 block content
     .search-area
         .jumbotron
-            h2 Search button location
-            p This is the zone for putting the search bar in
-            input(type="text", name=searchin, id=MoneyBaby, autocomplete="off")
-            #search.btn.btn-primary(type="submit") Search
-        h2 This is where the various products will append to
+            .col-md-6 
+                h2 Please enter your search term:
+            .col-md-4
+                div.form-group
+                    label(for='searchLabel') Name of Product:
+                    input#name.form-control(type='text', placeholder='Please enter search term(s)')
+                    label(for='textLabel') Output:
+                    textArea#output.form-control(type='text', placeholder='Results...')
+                #search.btn.btn-primary Search!
+        .row
+            .col-md-12
+                h2 Results page:
+                textArea#outputDisplay.form-control(type='text', placeholder='Formatted results displayed here...')
 
 block scripts
      script. 
          $('#search').on('click', function(){
-             console.log('Fire the Torpedos')
- 
-             var search = MoneyBaby;
-             $.post('/wishlistinterface/index.js', search, function(finder){
-                 console.log(finder);
-             });
-         })
+            console.log('Fire the torpedos!!!');
+
+            output.placeholder = 'Banana';
+            output.innerHTML = 'Winging it!'
+            var nameValue = $('#name').val();
+            var priceValue = $('#price').val();
+
+            var returnSearchedName = {
+                name: nameValue,
+                price: priceValue
+            };
+            output.innerHTML = returnSearchedName.name + " " + returnSearchedName.price;
+            outputDisplay.innerHTML = "Direct hit!!";
+
+            $.post('/api/products/search', returnSearchedName, function(resp){
+                
+                console.log('Am here now k');
+                console.log('resp: ' + resp);
+                console.log('resp[0].id: ' + resp[0].id);
+
+                for (i = 0; i < resp.length; i++)
+                {
+                    if (i === 0)
+                    {
+                        outputDisplay.innerHTML = "";
+                    }
+                    var insertHtml = "===========AMAZON ITEM #" + (i + 1) + "===========\n";
+                    insertHtml += "ASIN: " + resp[i].id + "\n";
+                    insertHtml += "NAME: " + resp[i].name + "\n";
+                    insertHtml += "PRICE" + resp[i].price + "\n";
+                    insertHtml += "CATEGORY" + resp[i].category + "\n";
+                    insertHtml += "URL" + resp[i].url + "\n";
+                    outputDisplay.innerHTML += insertHtml;
+                }
+                console.log('test?');
+            });
+        })

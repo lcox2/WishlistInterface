@@ -1,4 +1,4 @@
-var amazon = require('amazonapi');
+var amazonapi = require('amdefine');
 
 
 
