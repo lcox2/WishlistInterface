@@ -5,6 +5,8 @@ var util = require('util');
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var xhr = new XMLHttpRequest();
 
+var deferred = Q.defer();
+
 var amazonapi = require('amdefine');
 
 var OperationHelper = require('apac').OperationHelper;
@@ -16,49 +18,70 @@ var opHelper = new OperationHelper({
     assocId: 'lcox2-20',
 });
 
+module.exports = {
 
+    finder: function(input){
 
+    var deferred = Q.defer();
 
-module.exports = function(input) {
+    opHelper.execute('ItemSearch', {
+        'SearchIndex': 'All',
+        'Keywords': input,
+        'ResponseGroup': 'ItemAttributes,Offers,Images'
+    }).then((response) => {
 
-    var parameters= {
-        Keywords: [Object],
+        var amazonapi = response.result.ItemSearchResponse.Items.Item;
 
-        paginationInput: {
-            entries: 10
-        },
-
-        itemFilter: [
-            {Object: 'Name'}
-        ],
-    }
-
-    prodAdv.call("ItemSearch", {SearchIndex: "Books", Keywords: "Javascript"}, function(err, result) {
-        console.log(JSON.stringify(result));
-    })
-    
-    function itemsCallback(error, response) {
-        if(error){
-            callback(error);
-            return;
+        function data() {
+            this.name = "Na";
+            this.id = "NA";
+            this.url = "NA";
+            this.category = "NA";
+            this.price = "NA";
+            this.imageURL = "NA";
         }
-        var arr = itemsResponse.searchResult.item;
 
-        var returnArray = [];
+        if (response.result.ItemSearchResponse.Items.Item[0] != undefined) {
+            var resarr = [];
+            for (var index = 0; index < arr.length; index++) {
+                resarr.push(new data());
+                resarr[index].name = ("Name: ", arr[index].ItemAttributes.Title);
+                resarr[index].id = ("Id: ", arr[index].ItemAttributes.UPC);
+                resarr[index].url = ("URL: ", arr[index].DetailPageURL);
+                resarr[index].category = ("Category: ", arr[index].ItemAttributes.ProductGroup);
+                if (arr[index].Offers.Offer != undefined) {
+                    resarr[index].price = ("Price: ", arr[index].Offers.Offer.OfferListing.Price.FormattedPrice);
+                }
+                else if (arr[index].ItemAttributes.ListPrice != undefined) {
+                    resarr[index].price = ("Price: ", arr[index].ItemAttributes.ListPrice.FormattedPrice);
+                }
+                else {
 
-        for (var i = 0; i < arr.length; i++) {
+                }
 
-                var varObj = {
-                        id: arr[i].UPC,
-                        name: arr[i].Title,
-                        price: arr[i].Offers.Offer.OfferListing.Price.FormattedPrice,
-                        category: arr[i].ItemAttributes.ProductGroup,
-                        provider: 'amazon'
-                    }
-                returnArray.push(tempObj);
+                if (arr[index].MediumImage != undefined) {
+                    resarr[index].imageURL = (arr[index].MediumImage.URL)
+                }
+
+                else if (arr[index].ImageSets.ImageSet[0] != undefined) {
+                    resarr[index].imageURL = (arr[index].ImageSets.ImageSet[0].MediumImage.URL)
+                }
+
+                else if (arr[index].ImageSets.ImageSet != undefined) {
+                    resarr[index].imageURL = (arr[index].ImageSets.ImageSet.MediumImage.URL)
+                }
+
             }
-            console.log(returnArray);
-            callback(null, returnArray);
-        }   
-    );
-}; 
+
+            deferred.resolve(resarr);
+        }
+
+        else {
+            deferred.reject();
+        }
+    });
+
+
+    return deferred.promise;
+    }
+}

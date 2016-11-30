@@ -26,34 +26,32 @@ block scripts
 
             output.placeholder = 'Banana';
             output.innerHTML = 'Winging it!'
-            var nameValue = $('#name').val();
-            var priceValue = $('#price').val();
+            var name = $('#name').val();
 
             var returnSearchedName = {
-                name: nameValue,
-                price: priceValue
+                name: name
             };
-            output.innerHTML = returnSearchedName.name + " " + returnSearchedName.price;
+            output.innerHTML = returnSearchedName.name;
             outputDisplay.innerHTML = "Direct hit!!";
 
-            $.post('/api/products/search', returnSearchedName, function(resp){
+            $.post('/api/products/search', returnSearchedName, function(response){
                 
                 console.log('Am here now k');
-                console.log('resp: ' + resp);
-                console.log('resp[0].id: ' + resp[0].id);
+                console.log('response: ' + response);
+                console.log('response[0].id: ' + response[0].id);
 
-                for (i = 0; i < resp.length; i++)
+                for (i = 0; i < response.length; i++)
                 {
                     if (i === 0)
                     {
                         outputDisplay.innerHTML = "";
                     }
-                    var insertHtml = "===========AMAZON ITEM #" + (i + 1) + "===========\n";
-                    insertHtml += "ASIN: " + resp[i].id + "\n";
-                    insertHtml += "NAME: " + resp[i].name + "\n";
-                    insertHtml += "PRICE" + resp[i].price + "\n";
-                    insertHtml += "CATEGORY" + resp[i].category + "\n";
-                    insertHtml += "URL" + resp[i].url + "\n";
+                    var insertHtml = "AMAZON ITEM" + (i + 1) + "\n";
+                    insertHtml += "ASIN: " + response[i].id + "\n";
+                    insertHtml += "NAME: " + response[i].name + "\n";
+                    insertHtml += "PRICE" + response[i].price + "\n";
+                    insertHtml += "CATEGORY" + response[i].category + "\n";
+                    insertHtml += "URL" + response[i].url + "\n";
                     outputDisplay.innerHTML += insertHtml;
                 }
                 console.log('test?');

@@ -1,7 +1,8 @@
-var amazonapi = require('amdefine')
+var amazonapi = require('amdefine');
 
 
-var finder = require('./FindingItAll.js');
+var Finder = require('./FindingItAll.js')
+
 
 var OperationHelper = require('apac').OperationHelper;
 
@@ -26,31 +27,24 @@ app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 
 app.get('/', function(request, response){
-
+    
     response.render('main');
-
+    
 });
 
-app.post('/api/products/search', function(request){
-    var totalResult = [];
-    var inputName = request.body.name;
+app.post('/api/products/search', function(request, response) {
+    var respArr = [];
+    var givenName = request.body.name;
     var counter = 2;
-    finder(request.body.name, request.body.price, function(err, itemList) {
-        if (err) {
-            console.log('error in app post walmart');
-            res.send('error');
-            return;
+    Finder.finder(request.body.name)
+
+    console.log("Final object list is: " , +resarr[0].id);
+    respArr.push(resarr);
+    counter--;
+    if(counter === 0){
+        result.send(respArr);
         }
-        console.log('res object 0 id is: ' + itemList[0].id);
-        totalResult.push(itemList);
-        counter--;
-        if (counter === 0) {
-            res.send(totalResult);
-        }
-    });
-    //var _search = req.body;
-    //console.log(_search);
-    //res.render('main', {title: 'Found This! '});
+    return module.exports;
 });
 
 app.listen(port, function(){
