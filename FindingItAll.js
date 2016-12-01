@@ -83,5 +83,20 @@ module.exports = {
 
 
     return deferred.promise;
-    }
+},
+    test: function(finder){
+
+    test.then(function(arr){
+        output-area.append(arr[0].name);
+        output-area.append(arr[0].price);
+
+        output-area.append(arr[1].name);
+        output-area.append(arr[1].price);
+
+        output-area.append(arr[2].name);
+        output-area.append(arr[2].price);
+}).catch(function(){
+
+})
+    } 
 };

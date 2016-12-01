@@ -34,13 +34,19 @@ app.get('/', function(request, response){
 
 app.post('/api/products/search', function(request, response) {
     var respArr = [];
+    var counter = 2;
     var givenName = request.body;
     Find.finder(givenName);
-    
+    console.log("response object is: ");
+    respArr.push(response);
+    counter--;
+        if (counter === 0) {
+            res.send(totalResult);
+        }
 });
 
 app.listen(port, function(){
 
-    console.log('Whishlist sample on port: ' + port);
+    console.log('Amazon Wishlist on port: ' + port);
 
 });
