@@ -72,7 +72,7 @@ module.exports = {
                 }
 
             }
-
+            module.exports = arr;
             deferred.resolve(resarr);
         }
 
@@ -80,8 +80,6 @@ module.exports = {
             deferred.reject();
         }
     }, 5000);
-
-
     return deferred.promise;
 },
     test: function(finder){

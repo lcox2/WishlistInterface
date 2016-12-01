@@ -1,8 +1,9 @@
 var amazonapi = require('amdefine');
 
 
-var Find = require('./FindingItAll.js')
+var Find = require('./FindingItAll.js');
 
+var arr = require('./FindingItAll.js').arr;
 
 var OperationHelper = require('apac').OperationHelper;
 
@@ -33,16 +34,17 @@ app.get('/', function(request, response){
 });
 
 app.post('/api/products/search', function(request, response) {
-    var respArr = [];
+    var respArr = arr;
     var counter = 2;
     var givenName = request.body;
-    Find.finder(givenName);
-    console.log("response object is: ");
-    respArr.push(response);
-    counter--;
-        if (counter === 0) {
-            res.send(totalResult);
-        }
+    Find.finder(givenName)
+        .then(function(data){
+            console.log(data);
+            response.send(data);
+        })
+        .catch(function(err){
+            console.log(err);
+        });
 });
 
 app.listen(port, function(){

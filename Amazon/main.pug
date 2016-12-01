@@ -37,7 +37,23 @@ block scripts
 
             $.post('/api/products/search', returnSearchedName, function(response){
                 
-                console.log('!!!!!!resp: ' + response);
-                console.log('Go home clown: ' + response.id);
+
+                console.log('resp[0].id: ' + response[0].id);
+                for (i = 0; i < response.length; i++)
+                {
+                    if (i === 0)
+                    {
+                        outputDisplay.innerHTML = "";
+                    }
+                    var insertHtml = "+-------Amazon item #" + (i + 1) + "--------+\n";
+                    insertHtml += "ID: " + response[i].id + "\n";
+                    insertHtml += "NAME: " + response[i].name + "\n";
+                    insertHtml += "PRICE" + response[i].price + "\n";
+                    insertHtml += "CATEGORY" + response[i].category + "\n";
+                    insertHtml += "URL" + response[i].url + "\n";
+                    insertHtml += "IMAGEURL" + response[i].imageUrl;
+                    insertHtml += "PROVIDED BY: " + response[i].provider + "\n";
+                    outputDisplay.innerHTML += insertHtml;
+                }
             });
         })
