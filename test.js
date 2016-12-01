@@ -1,6 +1,10 @@
 var amazonapi = require('amdefine');
-var myFunctionName = require('ebayfinder');
+
 var walmart = require("walmart");
+
+var bodyParser = require('body-parser');
+
+walmart.
 
 var Find = require('./FindingItAll.js');
 
@@ -50,9 +54,8 @@ app.post('/api/products/search', function(request, response) {
     //Ebay
 
     //Walmart
-    walmart.setAPI();
     var walmartObject = {
-        searchTerm: inputName
+        searchTerm: givenName
     }
     walmart.search(walmartObject, function(err, itemList) {
         if (err) {

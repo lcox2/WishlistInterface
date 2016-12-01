@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/lcox2/WishlistInterface.git",
   "dependencies": {
-    "xmlhttprequest": "^1.8.0"
+    "xmlhttprequest": "^1.8.0",
+    "walmart": "git+https://github.com/zroberts/walmart.git",
+    "ebayfinder": "git+https://github.com/MattGable/ebayfinder.git",
+    "amazonapi":"git+https://github.com/lcox2/AmazonAPI.git"
   }
 }
