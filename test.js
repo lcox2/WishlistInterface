@@ -34,16 +34,9 @@ app.get('/', function(request, response){
 
 app.post('/api/products/search', function(request, response) {
     var respArr = [];
-    var givenName = request.body.name;
-    var counter = 2;
-    Find.finder(function(givenName)
-    {
-        opHelper.execute('ItemSearch', {
-        'SearchIndex': 'All',
-        'Keywords': givenName,
-        'ResponseGroup': 'ItemAttributes,Offers'
-        })
-    }) 
+    var givenName = request.body;
+    Find.finder(givenName);
+    
 });
 
 app.listen(port, function(){

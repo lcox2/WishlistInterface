@@ -18,8 +18,8 @@ var opHelper = new OperationHelper({
     assocId: 'lcox2-20',
 });
 
-module.exports = {
 
+module.exports = {
     finder: function(input){
 
     var deferred = Q.defer();
