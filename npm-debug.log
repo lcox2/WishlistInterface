@@ -1,0 +1,339 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install' ]
+2 info using npm@3.10.3
+3 info using node@v6.6.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly install normalizeTree
+8 silly loadCurrentTree Finishing
+9 silly loadIdealTree Starting
+10 silly install loadIdealTree
+11 silly cloneCurrentTree Starting
+12 silly install cloneCurrentTreeToIdealTree
+13 silly cloneCurrentTree Finishing
+14 silly loadShrinkwrap Starting
+15 silly install loadShrinkwrap
+16 silly loadShrinkwrap Finishing
+17 silly loadAllDepsIntoIdealTree Starting
+18 silly install loadAllDepsIntoIdealTree
+19 silly fetchOtherPackageData ebayfinder@git+https://github.com/MattGable/ebayfinder.git
+20 silly cache add args [ 'ebayfinder@git+https://github.com/MattGable/ebayfinder.git',
+20 silly cache add   null ]
+21 verbose cache add spec ebayfinder@git+https://github.com/MattGable/ebayfinder.git
+22 silly fetchOtherPackageData amazonapi@git+https://github.com/lcox2/AmazonAPI.git
+23 silly cache add args [ 'amazonapi@git+https://github.com/lcox2/AmazonAPI.git', null ]
+24 verbose cache add spec amazonapi@git+https://github.com/lcox2/AmazonAPI.git
+25 silly cache add parsed spec Result {
+25 silly cache add   raw: 'ebayfinder@git+https://github.com/MattGable/ebayfinder.git',
+25 silly cache add   scope: null,
+25 silly cache add   escapedName: 'ebayfinder',
+25 silly cache add   name: 'ebayfinder',
+25 silly cache add   rawSpec: 'git+https://github.com/MattGable/ebayfinder.git',
+25 silly cache add   spec: 'git+https://github.com/MattGable/ebayfinder.git',
+25 silly cache add   type: 'hosted',
+25 silly cache add   hosted:
+25 silly cache add    { type: 'github',
+25 silly cache add      ssh: 'git@github.com:MattGable/ebayfinder.git',
+25 silly cache add      sshUrl: 'git+ssh://git@github.com/MattGable/ebayfinder.git',
+25 silly cache add      httpsUrl: 'git+https://github.com/MattGable/ebayfinder.git',
+25 silly cache add      gitUrl: 'git://github.com/MattGable/ebayfinder.git',
+25 silly cache add      shortcut: 'github:MattGable/ebayfinder',
+25 silly cache add      directUrl: 'https://raw.githubusercontent.com/MattGable/ebayfinder/master/package.json' } }
+26 verbose addRemoteGit caching git+https://github.com/MattGable/ebayfinder.git
+27 verbose addRemoteGit git+https://github.com/MattGable/ebayfinder.git is a repository hosted by github
+28 silly tryClone cloning git+https://github.com/MattGable/ebayfinder.git via git+https://github.com/MattGable/ebayfinder.git
+29 verbose tryClone git-https-github-com-MattGable-ebayfinder-git-45ceb151 not in flight; caching
+30 verbose correctMkdir C:\Users\lcox\AppData\Roaming\npm-cache\_git-remotes correctMkdir not in flight; initializing
+31 silly cache add parsed spec Result {
+31 silly cache add   raw: 'amazonapi@git+https://github.com/lcox2/AmazonAPI.git',
+31 silly cache add   scope: null,
+31 silly cache add   escapedName: 'amazonapi',
+31 silly cache add   name: 'amazonapi',
+31 silly cache add   rawSpec: 'git+https://github.com/lcox2/AmazonAPI.git',
+31 silly cache add   spec: 'git+https://github.com/lcox2/AmazonAPI.git',
+31 silly cache add   type: 'hosted',
+31 silly cache add   hosted:
+31 silly cache add    { type: 'github',
+31 silly cache add      ssh: 'git@github.com:lcox2/AmazonAPI.git',
+31 silly cache add      sshUrl: 'git+ssh://git@github.com/lcox2/AmazonAPI.git',
+31 silly cache add      httpsUrl: 'git+https://github.com/lcox2/AmazonAPI.git',
+31 silly cache add      gitUrl: 'git://github.com/lcox2/AmazonAPI.git',
+31 silly cache add      shortcut: 'github:lcox2/AmazonAPI',
+31 silly cache add      directUrl: 'https://raw.githubusercontent.com/lcox2/AmazonAPI/master/package.json' } }
+32 verbose addRemoteGit caching git+https://github.com/lcox2/AmazonAPI.git
+33 verbose addRemoteGit git+https://github.com/lcox2/AmazonAPI.git is a repository hosted by github
+34 silly tryClone cloning git+https://github.com/lcox2/AmazonAPI.git via git+https://github.com/lcox2/AmazonAPI.git
+35 verbose tryClone git-https-github-com-lcox2-AmazonAPI-git-b02b9fbb not in flight; caching
+36 verbose correctMkdir C:\Users\lcox\AppData\Roaming\npm-cache\_git-remotes correctMkdir already in flight; waiting
+37 info git [ 'config', '--get', 'remote.origin.url' ]
+38 info git [ 'clone',
+38 info git   '--template=C:\\Users\\lcox\\AppData\\Roaming\\npm-cache\\_git-remotes\\_templates',
+38 info git   '--mirror',
+38 info git   'https://github.com/MattGable/ebayfinder.git',
+38 info git   'C:\\Users\\lcox\\AppData\\Roaming\\npm-cache\\_git-remotes\\git-https-github-com-MattGable-ebayfinder-git-45ceb151' ]
+39 silly validateExistingRemote git+https://github.com/lcox2/AmazonAPI.git remote.origin.url: https://github.com/lcox2/AmazonAPI.git
+40 verbose validateExistingRemote git+https://github.com/lcox2/AmazonAPI.git is updating existing cached remote C:\Users\lcox\AppData\Roaming\npm-cache\_git-remotes\git-https-github-com-lcox2-AmazonAPI-git-b02b9fbb
+41 info git [ 'fetch', '-a', 'origin' ]
+42 verbose mirrorRemote git+https://github.com/MattGable/ebayfinder.git git clone https://github.com/MattGable/ebayfinder.git
+43 verbose setPermissions git+https://github.com/MattGable/ebayfinder.git skipping chownr on Windows
+44 verbose resolveHead git+https://github.com/MattGable/ebayfinder.git original treeish: master
+45 info git [ 'rev-list', '-n1', 'master' ]
+46 silly resolveHead git+https://github.com/MattGable/ebayfinder.git resolved treeish: 953000c4fe43ee6fee4c04ce0ac8497db1f09ba7
+47 verbose resolveHead git+https://github.com/MattGable/ebayfinder.git resolved Git URL: git+https://github.com/MattGable/ebayfinder.git#953000c4fe43ee6fee4c04ce0ac8497db1f09ba7
+48 silly resolveHead Git working directory: C:\Users\lcox\AppData\Local\Temp\npm-5780-b8d87a85\git-cache-c6265e7f\953000c4fe43ee6fee4c04ce0ac8497db1f09ba7
+49 info git [ 'clone',
+49 info git   'C:\\Users\\lcox\\AppData\\Roaming\\npm-cache\\_git-remotes\\git-https-github-com-MattGable-ebayfinder-git-45ceb151',
+49 info git   'C:\\Users\\lcox\\AppData\\Local\\Temp\\npm-5780-b8d87a85\\git-cache-c6265e7f\\953000c4fe43ee6fee4c04ce0ac8497db1f09ba7' ]
+50 verbose updateRemote git fetch -a origin (https://github.com/lcox2/AmazonAPI.git)
+51 verbose setPermissions git+https://github.com/lcox2/AmazonAPI.git skipping chownr on Windows
+52 verbose resolveHead git+https://github.com/lcox2/AmazonAPI.git original treeish: master
+53 info git [ 'rev-list', '-n1', 'master' ]
+54 silly resolveHead git+https://github.com/lcox2/AmazonAPI.git resolved treeish: 1e086872fc8aef350bb499223331770da9181909
+55 verbose resolveHead git+https://github.com/lcox2/AmazonAPI.git resolved Git URL: git+https://github.com/lcox2/AmazonAPI.git#1e086872fc8aef350bb499223331770da9181909
+56 silly resolveHead Git working directory: C:\Users\lcox\AppData\Local\Temp\npm-5780-b8d87a85\git-cache-e5003cf5\1e086872fc8aef350bb499223331770da9181909
+57 info git [ 'clone',
+57 info git   'C:\\Users\\lcox\\AppData\\Roaming\\npm-cache\\_git-remotes\\git-https-github-com-lcox2-AmazonAPI-git-b02b9fbb',
+57 info git   'C:\\Users\\lcox\\AppData\\Local\\Temp\\npm-5780-b8d87a85\\git-cache-e5003cf5\\1e086872fc8aef350bb499223331770da9181909' ]
+58 verbose cloneResolved git+https://github.com/MattGable/ebayfinder.git clone Cloning into 'C:\Users\lcox\AppData\Local\Temp\npm-5780-b8d87a85\git-cache-c6265e7f\953000c4fe43ee6fee4c04ce0ac8497db1f09ba7'...
+58 verbose cloneResolved done.
+59 info git [ 'checkout', '953000c4fe43ee6fee4c04ce0ac8497db1f09ba7' ]
+60 verbose checkoutTreeish git+https://github.com/MattGable/ebayfinder.git checkout Note: checking out '953000c4fe43ee6fee4c04ce0ac8497db1f09ba7'.
+60 verbose checkoutTreeish
+60 verbose checkoutTreeish You are in 'detached HEAD' state. You can look around, make experimental
+60 verbose checkoutTreeish changes and commit them, and you can discard any commits you make in this
+60 verbose checkoutTreeish state without impacting any branches by performing another checkout.
+60 verbose checkoutTreeish
+60 verbose checkoutTreeish If you want to create a new branch to retain commits you create, you may
+60 verbose checkoutTreeish do so (now or later) by using -b with the checkout command again. Example:
+60 verbose checkoutTreeish
+60 verbose checkoutTreeish   git checkout -b <new-branch-name>
+60 verbose checkoutTreeish
+60 verbose checkoutTreeish HEAD is now at 953000c... Fixed typo
+61 info git [ 'submodule', '-q', 'update', '--init', '--recursive' ]
+62 verbose updateSubmodules git+https://github.com/MattGable/ebayfinder.git submodule update
+63 verbose addLocalDirectory C:\Users\lcox\AppData\Roaming\npm-cache\ebayfinder\1.0.0\package.tgz not in flight; packing
+64 verbose correctMkdir C:\Users\lcox\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+65 verbose tar pack [ 'C:\\Users\\lcox\\AppData\\Roaming\\npm-cache\\ebayfinder\\1.0.0\\package.tgz',
+65 verbose tar pack   'C:\\Users\\lcox\\AppData\\Local\\Temp\\npm-5780-b8d87a85\\git-cache-c6265e7f\\953000c4fe43ee6fee4c04ce0ac8497db1f09ba7' ]
+66 verbose tarball C:\Users\lcox\AppData\Roaming\npm-cache\ebayfinder\1.0.0\package.tgz
+67 verbose folder C:\Users\lcox\AppData\Local\Temp\npm-5780-b8d87a85\git-cache-c6265e7f\953000c4fe43ee6fee4c04ce0ac8497db1f09ba7
+68 verbose addLocalTarball adding from inside cache C:\Users\lcox\AppData\Roaming\npm-cache\ebayfinder\1.0.0\package.tgz
+69 verbose correctMkdir C:\Users\lcox\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+70 verbose addRemoteGit data._from: git+https://github.com/MattGable/ebayfinder.git
+71 verbose addRemoteGit data._resolved: git+https://github.com/MattGable/ebayfinder.git#953000c4fe43ee6fee4c04ce0ac8497db1f09ba7
+72 silly cache afterAdd ebayfinder@1.0.0
+73 verbose afterAdd C:\Users\lcox\AppData\Roaming\npm-cache\ebayfinder\1.0.0\package\package.json not in flight; writing
+74 verbose correctMkdir C:\Users\lcox\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+75 verbose afterAdd C:\Users\lcox\AppData\Roaming\npm-cache\ebayfinder\1.0.0\package\package.json written
+76 silly resolveWithNewModule ebayfinder@1.0.0 checking installable status
+77 verbose cloneResolved git+https://github.com/lcox2/AmazonAPI.git clone Cloning into 'C:\Users\lcox\AppData\Local\Temp\npm-5780-b8d87a85\git-cache-e5003cf5\1e086872fc8aef350bb499223331770da9181909'...
+77 verbose cloneResolved done.
+77 verbose cloneResolved Checking out files:  12% (137/1137)   Checking out files:  13% (148/1137)   Checking out files:  14% (160/1137)   Checking out files:  15% (171/1137)   Checking out files:  16% (182/1137)   Checking out files:  17% (194/1137)   Checking out files:  18% (205/1137)   Checking out files:  19% (217/1137)   Checking out files:  20% (228/1137)   Checking out files:  21% (239/1137)   Checking out files:  22% (251/1137)   Checking out files:  23% (262/1137)   Checking out files:  23% (270/1137)   Checking out files:  24% (273/1137)   Checking out files:  25% (285/1137)   Checking out files:  26% (296/1137)   Checking out files:  26% (303/1137)   Checking out files:  27% (307/1137)   Checking out files:  28% (319/1137)   Checking out files:  29% (330/1137)   Checking out files:  30% (342/1137)   Checking out files:  31% (353/1137)   Checking out files:  32% (364/1137)   Checking out files:  32% (375/1137)   Checking out files:  33% (376/1137)   Checking out files:  34% (387/1137)   Checking out files:  35% (398/1137)   Checking out files:  36% (410/1137)   Checking out files:  37% (421/1137)   Checking out files:  38% (433/1137)   Checking out files:  39% (444/1137)   Checking out files:  40% (455/1137)   Checking out files:  41% (467/1137)   Checking out files:  41% (474/1137)   Checking out files:  42% (478/1137)   Checking out files:  43% (489/1137)   Checking out files:  44% (501/1137)   Checking out files:  45% (512/1137)   Checking out files:  46% (524/1137)   Checking out files:  47% (535/1137)   Checking out files:  48% (546/1137)   Checking out files:  49% (558/1137)   Checking out files:  50% (569/1137)   Checking out files:  51% (580/1137)   Checking out files:  52% (592/1137)   Checking out files:  53% (603/1137)   Checking out files:  54% (614/1137)   Checking out files:  55% (626/1137)   Checking out files:  56% (637/1137)   Checking out files:  57% (649/1137)   Checking out files:  58% (660/1137)   Checking out files:  59% (671/1137)   Checking out files:  60% (683/1137)   Checking out files:  61% (694/1137)   Checking out files:  62% (705/1137)   Checking out files:  63% (717/1137)   Checking out files:  64% (728/1137)   Checking out files:  64% (731/1137)   Checking out files:  65% (740/1137)   Checking out files:  66% (751/1137)   Checking out files:  67% (762/1137)   Checking out files:  68% (774/1137)   Checking out files:  69% (785/1137)   Checking out files:  70% (796/1137)   Checking out files:  71% (808/1137)   Checking out files:  72% (819/1137)   Checking out files:  73% (831/1137)   Checking out files:  73% (833/1137)   Checking out files:  74% (842/1137)   Checking out files:  75% (853/1137)   Checking out files:  76% (865/1137)   Checking out files:  77% (876/1137)   Checking out files:  78% (887/1137)   Checking out files:  79% (899/1137)   Checking out files:  80% (910/1137)   Checking out files:  81% (921/1137)   Checking out files:  81% (922/1137)   Checking out files:  82% (933/1137)   Checking out files:  83% (944/1137)   Checking out files:  84% (956/1137)   Checking out files:  85% (967/1137)   Checking out files:  86% (978/1137)   Checking out files:  87% (990/1137)   Checking out files:  88% (1001/1137)   Checking out files:  89% (1012/1137)   Checking out files:  89% (1020/1137)   Checking out files:  90% (1024/1137)   Checking out files:  91% (1035/1137)   Checking out files:  92% (1047/1137)   Checking out files:  93% (1058/1137)   Checking out files:  94% (1069/1137)   Checking out files:  95% (1081/1137)   Checking out files:  96% (1092/1137)   Checking out files:  97% (1103/1137)   Checking out files:  98% (1115/1137)   Checking out files:  99% (1126/1137)   Checking out files:  99% (1127/1137)   Checking out files: 100% (1137/1137)   Checking out files: 100% (1137/1137), done.
+78 info git [ 'checkout', '1e086872fc8aef350bb499223331770da9181909' ]
+79 verbose checkoutTreeish git+https://github.com/lcox2/AmazonAPI.git checkout Note: checking out '1e086872fc8aef350bb499223331770da9181909'.
+79 verbose checkoutTreeish
+79 verbose checkoutTreeish You are in 'detached HEAD' state. You can look around, make experimental
+79 verbose checkoutTreeish changes and commit them, and you can discard any commits you make in this
+79 verbose checkoutTreeish state without impacting any branches by performing another checkout.
+79 verbose checkoutTreeish
+79 verbose checkoutTreeish If you want to create a new branch to retain commits you create, you may
+79 verbose checkoutTreeish do so (now or later) by using -b with the checkout command again. Example:
+79 verbose checkoutTreeish
+79 verbose checkoutTreeish   git checkout -b <new-branch-name>
+79 verbose checkoutTreeish
+79 verbose checkoutTreeish HEAD is now at 1e08687... Merge pull request #2 from lcox2/testing
+80 info git [ 'submodule', '-q', 'update', '--init', '--recursive' ]
+81 verbose updateSubmodules git+https://github.com/lcox2/AmazonAPI.git submodule update
+82 verbose addLocalDirectory C:\Users\lcox\AppData\Roaming\npm-cache\amazonapi\1.0.0\package.tgz not in flight; packing
+83 verbose correctMkdir C:\Users\lcox\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+84 verbose tar pack [ 'C:\\Users\\lcox\\AppData\\Roaming\\npm-cache\\amazonapi\\1.0.0\\package.tgz',
+84 verbose tar pack   'C:\\Users\\lcox\\AppData\\Local\\Temp\\npm-5780-b8d87a85\\git-cache-e5003cf5\\1e086872fc8aef350bb499223331770da9181909' ]
+85 verbose tarball C:\Users\lcox\AppData\Roaming\npm-cache\amazonapi\1.0.0\package.tgz
+86 verbose folder C:\Users\lcox\AppData\Local\Temp\npm-5780-b8d87a85\git-cache-e5003cf5\1e086872fc8aef350bb499223331770da9181909
+87 verbose addLocalTarball adding from inside cache C:\Users\lcox\AppData\Roaming\npm-cache\amazonapi\1.0.0\package.tgz
+88 verbose correctMkdir C:\Users\lcox\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+89 verbose addRemoteGit data._from: git+https://github.com/lcox2/AmazonAPI.git
+90 verbose addRemoteGit data._resolved: git+https://github.com/lcox2/AmazonAPI.git#1e086872fc8aef350bb499223331770da9181909
+91 silly cache afterAdd amazonapi@1.0.0
+92 verbose afterAdd C:\Users\lcox\AppData\Roaming\npm-cache\amazonapi\1.0.0\package\package.json not in flight; writing
+93 verbose correctMkdir C:\Users\lcox\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+94 verbose afterAdd C:\Users\lcox\AppData\Roaming\npm-cache\amazonapi\1.0.0\package\package.json written
+95 silly resolveWithNewModule amazonapi@1.0.0 checking installable status
+96 silly fetchNamedPackageData Q
+97 silly mapToRegistry name Q
+98 silly mapToRegistry using default registry
+99 silly mapToRegistry registry https://registry.npmjs.org/
+100 silly mapToRegistry data Result {
+100 silly mapToRegistry   raw: 'Q',
+100 silly mapToRegistry   scope: null,
+100 silly mapToRegistry   escapedName: 'Q',
+100 silly mapToRegistry   name: 'Q',
+100 silly mapToRegistry   rawSpec: '',
+100 silly mapToRegistry   spec: 'latest',
+100 silly mapToRegistry   type: 'tag' }
+101 silly mapToRegistry uri https://registry.npmjs.org/Q
+102 silly fetchOtherPackageData Amazon-Provider@https://github.com/lcox2/AmazonAPI/
+103 silly cache add args [ 'Amazon-Provider@https://github.com/lcox2/AmazonAPI/', null ]
+104 verbose cache add spec Amazon-Provider@https://github.com/lcox2/AmazonAPI/
+105 silly cache add parsed spec Result {
+105 silly cache add   raw: 'Amazon-Provider@https://github.com/lcox2/AmazonAPI/',
+105 silly cache add   scope: null,
+105 silly cache add   escapedName: 'Amazon-Provider',
+105 silly cache add   name: 'Amazon-Provider',
+105 silly cache add   rawSpec: 'https://github.com/lcox2/AmazonAPI/',
+105 silly cache add   spec: 'https://github.com/lcox2/AmazonAPI/',
+105 silly cache add   type: 'remote' }
+106 silly mapToRegistry name Amazon-Provider@https://github.com/lcox2/AmazonAPI/
+107 silly mapToRegistry using default registry
+108 silly mapToRegistry registry https://registry.npmjs.org/
+109 silly mapToRegistry data Result {
+109 silly mapToRegistry   raw: 'Amazon-Provider@https://github.com/lcox2/AmazonAPI/',
+109 silly mapToRegistry   scope: null,
+109 silly mapToRegistry   escapedName: 'Amazon-Provider',
+109 silly mapToRegistry   name: 'Amazon-Provider',
+109 silly mapToRegistry   rawSpec: 'https://github.com/lcox2/AmazonAPI/',
+109 silly mapToRegistry   spec: 'https://github.com/lcox2/AmazonAPI/',
+109 silly mapToRegistry   type: 'remote' }
+110 silly mapToRegistry uri https://github.com/lcox2/AmazonAPI/
+111 verbose addRemoteTarball https://github.com/lcox2/AmazonAPI/ not in flight; adding
+112 verbose addRemoteTarball [ 'https://github.com/lcox2/AmazonAPI/', null ]
+113 info retry fetch attempt 1 at 6:45:50 PM
+114 info attempt registry request try #1 at 6:45:50 PM
+115 http fetch GET https://github.com/lcox2/AmazonAPI/
+116 verbose request id 479428646abc92ec
+117 verbose request uri https://registry.npmjs.org/Q
+118 verbose request no auth needed
+119 info attempt registry request try #1 at 6:45:50 PM
+120 verbose etag "583c89d5-238ba"
+121 http request GET https://registry.npmjs.org/Q
+122 http fetch 406 https://github.com/lcox2/AmazonAPI/
+123 error fetch failed https://github.com/lcox2/AmazonAPI/
+124 warn retry will retry, error on last attempt: Error: fetch failed with status code 406
+125 http 200 https://registry.npmjs.org/Q
+126 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+126 verbose headers   'content-type': 'application/json',
+126 verbose headers   etag: '"574d2255-44c"',
+126 verbose headers   'content-encoding': 'gzip',
+126 verbose headers   'cache-control': 'max-age=300',
+126 verbose headers   'content-length': '570',
+126 verbose headers   'accept-ranges': 'bytes',
+126 verbose headers   date: 'Thu, 01 Dec 2016 23:45:56 GMT',
+126 verbose headers   via: '1.1 varnish',
+126 verbose headers   age: '0',
+126 verbose headers   connection: 'keep-alive',
+126 verbose headers   'x-served-by': 'cache-iad2140-IAD',
+126 verbose headers   'x-cache': 'MISS',
+126 verbose headers   'x-cache-hits': '0',
+126 verbose headers   'x-timer': 'S1480635956.235990,VS0,VE56',
+126 verbose headers   vary: 'Accept-Encoding' }
+127 silly get cb [ 200,
+127 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+127 silly get     'content-type': 'application/json',
+127 silly get     etag: '"574d2255-44c"',
+127 silly get     'content-encoding': 'gzip',
+127 silly get     'cache-control': 'max-age=300',
+127 silly get     'content-length': '570',
+127 silly get     'accept-ranges': 'bytes',
+127 silly get     date: 'Thu, 01 Dec 2016 23:45:56 GMT',
+127 silly get     via: '1.1 varnish',
+127 silly get     age: '0',
+127 silly get     connection: 'keep-alive',
+127 silly get     'x-served-by': 'cache-iad2140-IAD',
+127 silly get     'x-cache': 'MISS',
+127 silly get     'x-cache-hits': '0',
+127 silly get     'x-timer': 'S1480635956.235990,VS0,VE56',
+127 silly get     vary: 'Accept-Encoding' } ]
+128 verbose get saving Q to C:\Users\lcox\AppData\Roaming\npm-cache\registry.npmjs.org\Q\.cache.json
+129 verbose correctMkdir C:\Users\lcox\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+130 silly resolveWithNewModule Q@0.0.1 checking installable status
+131 silly cache add args [ 'Q@0.0.1', null ]
+132 verbose cache add spec Q@0.0.1
+133 silly cache add parsed spec Result {
+133 silly cache add   raw: 'Q@0.0.1',
+133 silly cache add   scope: null,
+133 silly cache add   escapedName: 'Q',
+133 silly cache add   name: 'Q',
+133 silly cache add   rawSpec: '0.0.1',
+133 silly cache add   spec: '0.0.1',
+133 silly cache add   type: 'version' }
+134 silly addNamed Q@0.0.1
+135 verbose addNamed "0.0.1" is a plain semver version for Q
+136 silly mapToRegistry name Q
+137 silly mapToRegistry using default registry
+138 silly mapToRegistry registry https://registry.npmjs.org/
+139 silly mapToRegistry data Result {
+139 silly mapToRegistry   raw: 'Q',
+139 silly mapToRegistry   scope: null,
+139 silly mapToRegistry   escapedName: 'Q',
+139 silly mapToRegistry   name: 'Q',
+139 silly mapToRegistry   rawSpec: '',
+139 silly mapToRegistry   spec: 'latest',
+139 silly mapToRegistry   type: 'tag' }
+140 silly mapToRegistry uri https://registry.npmjs.org/Q
+141 verbose addNameVersion registry:https://registry.npmjs.org/Q not in flight; fetching
+142 verbose get https://registry.npmjs.org/Q not expired, no request
+143 silly cache afterAdd Q@0.0.1
+144 verbose afterAdd C:\Users\lcox\AppData\Roaming\npm-cache\Q\0.0.1\package\package.json not in flight; writing
+145 verbose correctMkdir C:\Users\lcox\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+146 verbose afterAdd C:\Users\lcox\AppData\Roaming\npm-cache\Q\0.0.1\package\package.json written
+147 info retry fetch attempt 2 at 6:46:00 PM
+148 info attempt registry request try #1 at 6:46:00 PM
+149 http fetch GET https://github.com/lcox2/AmazonAPI/
+150 http fetch 406 https://github.com/lcox2/AmazonAPI/
+151 error fetch failed https://github.com/lcox2/AmazonAPI/
+152 warn retry will retry, error on last attempt: Error: fetch failed with status code 406
+153 info retry fetch attempt 3 at 6:47:00 PM
+154 info attempt registry request try #1 at 6:47:00 PM
+155 http fetch GET https://github.com/lcox2/AmazonAPI/
+156 http fetch 406 https://github.com/lcox2/AmazonAPI/
+157 error fetch failed https://github.com/lcox2/AmazonAPI/
+158 silly fetchPackageMetaData Error: fetch failed with status code 406
+158 silly fetchPackageMetaData     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\fetch.js:51:14)
+158 silly fetchPackageMetaData     at emitOne (events.js:96:13)
+158 silly fetchPackageMetaData     at Request.emit (events.js:188:7)
+158 silly fetchPackageMetaData     at Request.onRequestResponse (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:977:10)
+158 silly fetchPackageMetaData     at emitOne (events.js:96:13)
+158 silly fetchPackageMetaData     at ClientRequest.emit (events.js:188:7)
+158 silly fetchPackageMetaData     at HTTPParser.parserOnIncomingClient [as onIncoming] (_http_client.js:472:21)
+158 silly fetchPackageMetaData     at HTTPParser.parserOnHeadersComplete (_http_common.js:99:23)
+158 silly fetchPackageMetaData     at TLSSocket.socketOnData (_http_client.js:361:20)
+158 silly fetchPackageMetaData     at emitOne (events.js:96:13)
+158 silly fetchPackageMetaData  error for Amazon-Provider@https://github.com/lcox2/AmazonAPI/ Error: fetch failed with status code 406
+158 silly fetchPackageMetaData     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\fetch.js:51:14)
+158 silly fetchPackageMetaData     at emitOne (events.js:96:13)
+158 silly fetchPackageMetaData     at Request.emit (events.js:188:7)
+158 silly fetchPackageMetaData     at Request.onRequestResponse (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:977:10)
+158 silly fetchPackageMetaData     at emitOne (events.js:96:13)
+158 silly fetchPackageMetaData     at ClientRequest.emit (events.js:188:7)
+158 silly fetchPackageMetaData     at HTTPParser.parserOnIncomingClient [as onIncoming] (_http_client.js:472:21)
+158 silly fetchPackageMetaData     at HTTPParser.parserOnHeadersComplete (_http_common.js:99:23)
+158 silly fetchPackageMetaData     at TLSSocket.socketOnData (_http_client.js:361:20)
+158 silly fetchPackageMetaData     at emitOne (events.js:96:13)
+159 silly rollbackFailedOptional Starting
+160 silly rollbackFailedOptional Finishing
+161 silly runTopLevelLifecycles Starting
+162 silly runTopLevelLifecycles Finishing
+163 silly install printInstalled
+164 verbose stack Error: fetch failed with status code 406
+164 verbose stack     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\fetch.js:51:14)
+164 verbose stack     at emitOne (events.js:96:13)
+164 verbose stack     at Request.emit (events.js:188:7)
+164 verbose stack     at Request.onRequestResponse (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:977:10)
+164 verbose stack     at emitOne (events.js:96:13)
+164 verbose stack     at ClientRequest.emit (events.js:188:7)
+164 verbose stack     at HTTPParser.parserOnIncomingClient [as onIncoming] (_http_client.js:472:21)
+164 verbose stack     at HTTPParser.parserOnHeadersComplete (_http_common.js:99:23)
+164 verbose stack     at TLSSocket.socketOnData (_http_client.js:361:20)
+164 verbose stack     at emitOne (events.js:96:13)
+165 verbose cwd C:\Users\lcox\Documents\Github\WishlistInterface
+166 error Windows_NT 10.0.14393
+167 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
+168 error node v6.6.0
+169 error npm  v3.10.3
+170 error fetch failed with status code 406
+171 error If you need help, you may report this error at:
+171 error     <https://github.com/npm/npm/issues>
+172 verbose exit [ 1, true ]
