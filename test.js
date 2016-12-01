@@ -1,5 +1,6 @@
 var amazonapi = require('amdefine');
-
+var myFunctionName = require('ebayfinder');
+var walmart = require("walmart");
 
 var Find = require('./FindingItAll.js');
 
@@ -34,6 +35,7 @@ app.get('/', function(request, response){
 });
 
 app.post('/api/products/search', function(request, response) {
+    //Amazon
     var respArr = arr;
     var counter = 2;
     var givenName = request.body;
@@ -45,6 +47,26 @@ app.post('/api/products/search', function(request, response) {
         .catch(function(err){
             console.log(err);
         });
+    //Ebay
+
+    //Walmart
+    walmart.setAPI();
+    var walmartObject = {
+        searchTerm: inputName
+    }
+    walmart.search(walmartObject, function(err, itemList) {
+        if (err) {
+            console.log('error in app post walmart');
+            res.send('error');
+            return;
+        }
+        console.log('Walmart object 0 maxPrice is: ', +itemList[0].price)
+        totalResult.push(itemList);
+        counter--;
+        if (counter === 0) {
+            res.send(totalResult);
+        }
+    });
 });
 
 app.listen(port, function(){
