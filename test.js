@@ -1,10 +1,7 @@
 var amazonapi = require('amdefine');
 
-var bodyParser = require('body-parser');
 
 var Find = require('./FindingItAll.js');
-
-var arr = require('./FindingItAll.js').arr;
 
 var OperationHelper = require('apac').OperationHelper;
 
@@ -36,7 +33,7 @@ app.get('/', function(request, response){
 
 app.post('/api/products/search', function(request, response) {
     //Amazon
-    var givenName = request.body;
+    var givenName = request.body.name;
     Find.finder(givenName)
         .then(function(data){
             console.log(data);
@@ -47,8 +44,8 @@ app.post('/api/products/search', function(request, response) {
         });
     //Ebay
 
-    //walmart
-    
+    //Walmart
+
 });
 
 app.listen(port, function(){
