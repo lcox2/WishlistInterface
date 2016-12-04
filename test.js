@@ -1,6 +1,6 @@
 var amazonapi = require('amdefine');
 var walmart = require("walmart");
-var Ebay = require("ebay-api")
+var Ebay = require("ebay-api");
 
 walmart.setApi(process.env.WALMART);
 
@@ -45,9 +45,24 @@ app.post('/api/products/search', function(request, response) {
         .catch(function(err){
             console.log(err);
         });
+
     //Ebay
+    var ebaySearch = require('ebayfinder');
+    ebaySearch(APIKEY, "Tennis Ball", 99, function(err, res){
+    console.log("Inside Ebayfinder's function call...");
+    });
 
     //Walmart
+    var walmartSearch = {
+        searchTerm : 'Baseball Bat',
+        minPrice   : '0',
+        maxPrice   : '40'
+    };
+
+    walmart.search(walmartSearch, function(err, res){
+
+    });
+
 });
 
 
