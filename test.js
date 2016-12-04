@@ -1,5 +1,8 @@
 var amazonapi = require('amdefine');
+var walmart = require("walmart");
+var Ebay = require("ebay-api")
 
+walmart.setApi(process.env.WALMART);
 
 var Find = require('./FindingItAll.js');
 
@@ -46,7 +49,6 @@ app.post('/api/products/search', function(request, response) {
 
     //Walmart
 
-});
 
 app.listen(port, function(){
 
