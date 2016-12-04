@@ -85,14 +85,14 @@ module.exports = {
     test: function(finder){
 
     test.then(function(arr){
-        output-area.append(arr[0].name);
-        output-area.append(arr[0].price);
+        console.log(arr[0].name);
+        console.log(arr[0].price);
 
-        output-area.append(arr[1].name);
-        output-area.append(arr[1].price);
+        console.log(arr[1].name);
+        console.log(arr[1].price);
 
-        output-area.append(arr[2].name);
-        output-area.append(arr[2].price);
+        console.log(arr[2].name);
+        console.log(arr[2].price);
 }).catch(function(){
 
 })
