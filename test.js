@@ -1,7 +1,7 @@
 var amazonapi = require('amdefine');
 var walmart = require("walmart");
 
-walmart.setApi(process.env.WALMART);
+walmart.setApi('krrjmy2wbqm2c2fah5hqtzks');
 
 var Find = require('./FindingItAll.js');
 
@@ -27,13 +27,13 @@ app.set('views', './Amazon');
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 
-app.get('/', function(request, response){
+app.get('/', function(request, res){
     
-    response.render('main');
+    res.render('main');
     
 });
 
-app.post('/api/products/search', function(request, response) {
+app.post('/api/products/search', function(request, res) {
     var counter = 2;
     var totalResult = [];
     //Amazon
@@ -41,20 +41,29 @@ app.post('/api/products/search', function(request, response) {
     Find.finder(givenName)
         .then(function(data){
             console.log(data);
-            response.send(data);
+            totalResult.push(data)
         })
         .catch(function(err){
             console.log(err);
         });
     //Ebay
+    //matt what do I do here?
     //Walmart
     var walmartObject = {
-        searchTerm: request.body.name,
+        searchTerm: givenName,
         minPrice: '0',
         maxPrice: '10000000'
     }
-    walmart.search(walmartObject, function(err, res){
-        
+    walmart.search(walmartObject, function(err, itemList){
+        if(err){
+            console.log(err);
+            res.send(err);
+        }   
+        else{
+            console.log(itemList);
+            totalResult.push(itemList);
+            res.send(totalResult);
+        }
     });
 });
 

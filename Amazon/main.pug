@@ -33,26 +33,43 @@ block scripts
                 name: name
             };
             output.innerHTML = returnSearchedName.name;
-            outputDisplay.innerHTML = "Direct hit!!";
+            outputDisplay.innerHTML = " ";
 
-            $.post('/api/products/search', returnSearchedName, function(response){
+            $.post('/api/products/search', returnSearchedName, function(resp){
                 
 
-                console.log('resp[0].id: ' + response[0].id);
-                for (i = 0; i < response.length; i++)
+                console.log('resp[0].id: ' + resp[0].id);
+                console.log('resp[1].id: ' + resp[1].id);
+                 for (i = 0; i < resp[0].length; i++)
                 {
                     if (i === 0)
                     {
                         outputDisplay.innerHTML = "";
                     }
-                    var insertHtml = "+-------Amazon item #" + (i + 1) + "--------+\n";
-                    insertHtml += "ID: " + response[i].id + "\n";
-                    insertHtml += "NAME: " + response[i].name + "\n";
-                    insertHtml += "PRICE" + response[i].price + "\n";
-                    insertHtml += "CATEGORY" + response[i].category + "\n";
-                    insertHtml += "URL" + response[i].url + "\n";
-                    insertHtml += "IMAGEURL" + response[i].imageUrl;
-                    insertHtml += "PROVIDED BY: " + response[i].provider + "\n";
+                    insertHtml = "===========Amazon ITEM #" + (i + 1) + "===========\n";
+                    insertHtml += "ID: " + resp[0][i].id + "\n";
+                    insertHtml += "NAME: " + resp[0][i].name + "\n";
+                    insertHtml += "PRICE" + resp[0][i].price + "\n";
+                    insertHtml += "CATEGORY" + resp[0][i].category + "\n";
+                    insertHtml += "URL" + resp[0][i].url + "\n";
+                    insertHtml += "IMAGEURL" + resp[0][i].imageUrl;
+                    insertHtml += "PROVIDED BY: " + resp[0][i].provider + "\n";
+                    outputDisplay.innerHTML += insertHtml;
+                }
+                for (i = 0; i < resp[1].length; i++)
+                {
+                    if (i === 0)
+                    {
+                        outputDisplay.innerHTML += "/n";
+                    }
+                    var insertHtml = "===========Walmart ITEM #" + (i + 1) + "===========\n";
+                    insertHtml += "ID: " + resp[1][i].id + "\n";
+                    insertHtml += "NAME: " + resp[1][i].name + "\n";
+                    insertHtml += "PRICE" + resp[1][i].price + "\n";
+                    insertHtml += "CATEGORY" + resp[1][i].category + "\n";
+                    insertHtml += "URL" + resp[1][i].url + "\n";
+                    insertHtml += "IMAGEURL" + resp[1][i].imageUrl;
+                    insertHtml += "PROVIDED BY: " + resp[1][i].provider + "\n";
                     outputDisplay.innerHTML += insertHtml;
                 }
             });
