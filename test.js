@@ -34,7 +34,6 @@ app.get('/', function(request, res){
 });
 
 app.post('/api/products/search', function(request, res) {
-    var counter = 2;
     var totalResult = [];
     //Amazon
     var givenName = request.body.name;
