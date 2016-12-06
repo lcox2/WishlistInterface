@@ -66,7 +66,7 @@ app.post('/api/products/search', function(request, res) {
     //Ebay
     //matt what do I do here?
    // var ebaySearch = require('ebayfinder');
-    //ebaySearch('ff9b1a47-10fb-40d6-ad48-23527dd70aef', request.body.name, 99, function(err, secList){
+    //ebaySearch('ff9b1a47-10fb-40d6-ad48-23527dd70aef', givenName, 99, function(err, secList){
         //if(err){
           //  console.log(err);
           //  res.send(err);
