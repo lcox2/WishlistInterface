@@ -48,6 +48,7 @@ app.post('/api/products/search', function(request, response) {
         });
     //Ebay
 <<<<<<< HEAD
+<<<<<<< HEAD
     APIKEY = 'ff9b1a47-10fb-40d6-ad48-23527dd70aef';
     process.env.APIKEY
     var ebaySearch = require('ebayfinder');
@@ -55,6 +56,8 @@ app.post('/api/products/search', function(request, response) {
     console.log("Inside Ebayfinder's function call...");
     });
 
+=======
+>>>>>>> 86a89ffb32f9a4edbfec93e7be50d236d422a092
 =======
 >>>>>>> 86a89ffb32f9a4edbfec93e7be50d236d422a092
     //Walmart
