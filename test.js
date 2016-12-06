@@ -46,19 +46,6 @@ app.post('/api/products/search', function(request, res) {
         .catch(function(err){
             console.log(err);
         });
-    //Ebay
-    //matt what do I do here?
-    var ebaySearch = require('ebayfinder');
-    ebaySearch('ff9b1a47-10fb-40d6-ad48-23527dd70aef', request.body.name, 99, function(err, itemList){
-        if(err){
-            console.log(err);
-            res.send(err);
-        }   
-        else{
-            console.log(itemList);
-            totalResult.push(itemList);
-        }
-    });
     //Walmart
     var walmartObject = {
         searchTerm: givenName,
@@ -76,6 +63,20 @@ app.post('/api/products/search', function(request, res) {
             res.send(totalResult);
         }
     });
+    //Ebay
+    //matt what do I do here?
+   // var ebaySearch = require('ebayfinder');
+    //ebaySearch('ff9b1a47-10fb-40d6-ad48-23527dd70aef', request.body.name, 99, function(err, secList){
+        //if(err){
+          //  console.log(err);
+          //  res.send(err);
+       // }   
+        //else{
+       //     console.log(secList);
+      //      totalResult.push(secList);
+       //     res.send(totalResult);
+       // }
+   // });
 });
 
 
