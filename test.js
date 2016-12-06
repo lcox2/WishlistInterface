@@ -47,19 +47,12 @@ app.post('/api/products/search', function(request, response) {
             console.log(err);
         });
     //Ebay
-<<<<<<< HEAD
-<<<<<<< HEAD
     APIKEY = 'ff9b1a47-10fb-40d6-ad48-23527dd70aef';
     process.env.APIKEY
     var ebaySearch = require('ebayfinder');
-    ebaySearch(APIKEY, "Tennis Ball", 99, function(err, res){
+    ebaySearch(APIKEY, request.body.name, 99, function(err, res){
     console.log("Inside Ebayfinder's function call...");
     });
-
-=======
->>>>>>> 86a89ffb32f9a4edbfec93e7be50d236d422a092
-=======
->>>>>>> 86a89ffb32f9a4edbfec93e7be50d236d422a092
     //Walmart
     var walmartObject = {
         searchTerm: request.body.name,
