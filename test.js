@@ -48,7 +48,7 @@ app.post('/api/products/search', function(request, response) {
         });
     //Ebay
     APIKEY = 'ff9b1a47-10fb-40d6-ad48-23527dd70aef';
-    process.env.APIKEY
+    process.env.APIKEY;
     var ebaySearch = require('ebayfinder');
     ebaySearch(APIKEY, request.body.name, 99, function(err, res){
     console.log("Inside Ebayfinder's function call...");
