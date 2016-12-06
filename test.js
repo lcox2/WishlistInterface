@@ -48,11 +48,16 @@ app.post('/api/products/search', function(request, res) {
         });
     //Ebay
     //matt what do I do here?
-    APIKEY = 'ff9b1a47-10fb-40d6-ad48-23527dd70aef';
-    process.env.APIKEY;
     var ebaySearch = require('ebayfinder');
-    ebaySearch(APIKEY, request.body.name, 99, function(err, res){
-    console.log("Inside Ebayfinder's function call...");
+    ebaySearch('ff9b1a47-10fb-40d6-ad48-23527dd70aef', request.body.name, 99, function(err, itemList){
+        if(err){
+            console.log(err);
+            res.send(err);
+        }   
+        else{
+            console.log(itemList);
+            totalResult.push(itemList);
+        }
     });
     //Walmart
     var walmartObject = {

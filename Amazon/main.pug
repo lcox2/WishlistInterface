@@ -62,7 +62,7 @@ block scripts
                     {
                         outputDisplay.innerHTML += "/n";
                     }
-                    var insertHtml = "===========Walmart ITEM #" + (i + 1) + "===========\n";
+                    var insertHtml = "===========Ebat ITEM #" + (i + 1) + "===========\n";
                     insertHtml += "ID: " + resp[1][i].id + "\n";
                     insertHtml += "NAME: " + resp[1][i].name + "\n";
                     insertHtml += "PRICE" + resp[1][i].price + "\n";
@@ -70,6 +70,22 @@ block scripts
                     insertHtml += "URL" + resp[1][i].url + "\n";
                     insertHtml += "IMAGEURL" + resp[1][i].imageUrl;
                     insertHtml += "PROVIDED BY: " + resp[1][i].provider + "\n";
+                    outputDisplay.innerHTML += insertHtml;
+                }
+                for (i = 0; i < resp[2].length; i++)
+                {
+                    if (i === 0)
+                    {
+                        outputDisplay.innerHTML += "/n";
+                    }
+                    var insertHtml = "===========Ebat ITEM #" + (i + 1) + "===========\n";
+                    insertHtml += "ID: " + resp[2][i].id + "\n";
+                    insertHtml += "NAME: " + resp[2][i].name + "\n";
+                    insertHtml += "PRICE" + resp[2][i].price + "\n";
+                    insertHtml += "CATEGORY" + resp[2][i].category + "\n";
+                    insertHtml += "URL" + resp[2][i].url + "\n";
+                    insertHtml += "IMAGEURL" + resp[2][i].imageUrl;
+                    insertHtml += "PROVIDED BY: " + resp[2][i].provider + "\n";
                     outputDisplay.innerHTML += insertHtml;
                 }
             });
