@@ -18,7 +18,6 @@
   "homepage": "https://github.com/lcox2/WishlistInterface.git",
   "dependencies": {
     "amazonapi": "git+https://github.com/lcox2/AmazonAPI.git",
-    "dotenv": "^2.0.0",
     "ebay-api": "^1.13.1",
     "ebayfinder": "git+https://github.com/MattGable/ebayfinder.git",
     "walmart": "git+https://github.com/zroberts/walmart.git",
