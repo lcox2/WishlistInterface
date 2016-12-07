@@ -8,7 +8,6 @@ block content
         .jumbotron
             .col-md-6 
                 h2 Please enter your search term:
-            .col-md-4
                 div.form-group
                     label(for='searchLabel') Name of Product:
                     input#name.form-control(type='text', placeholder='Please enter search term(s)')
@@ -25,8 +24,8 @@ block scripts
          $('#search').on('click', function(){
             console.log('Fire the torpedos!!!');
 
-            output.placeholder = 'Banana';
-            output.innerHTML = 'Winging it!'
+            output.placeholder = '  ';
+            output.innerHTML = '  ';
             var name = $('#name').val();
 
             var returnSearchedName = {
@@ -46,8 +45,8 @@ block scripts
                     {
                         outputDisplay.innerHTML = "";
                     }
-                    insertHtml = "===========Amazon ITEM #" + (i + 1) + "===========\n";
-                    insertHtml += "ID: " + resp[0][i].id + "\n";
+                    insertHtml = "++++++++++Amazon ITEM #" + (i + 1) + "+++++++++++\n";
+                    insertHtml += "ASIN: " + resp[0][i].id + "\n";
                     insertHtml += "NAME: " + resp[0][i].name + "\n";
                     insertHtml += "PRICE" + resp[0][i].price + "\n";
                     insertHtml += "CATEGORY" + resp[0][i].category + "\n";
@@ -63,7 +62,7 @@ block scripts
                         outputDisplay.innerHTML += "/n";
                     }
                     var insertHtml = "===========Walmart ITEM #" + (i + 1) + "===========\n";
-                    insertHtml += "ID: " + resp[1][i].id + "\n";
+                    insertHtml += "SKU: " + resp[1][i].id + "\n";
                     insertHtml += "NAME: " + resp[1][i].name + "\n";
                     insertHtml += "PRICE" + resp[1][i].price + "\n";
                     insertHtml += "CATEGORY" + resp[1][i].category + "\n";
@@ -78,7 +77,7 @@ block scripts
                     {
                         outputDisplay.innerHTML += "/n";
                     }
-                    var insertHtml = "===========Ebay ITEM #" + (i + 1) + "===========\n";
+                    var insertHtml = "------------Ebay ITEM #" + (i + 1) + "---------\n";
                     insertHtml += "ID: " + resp[2][i].id + "\n";
                     insertHtml += "NAME: " + resp[2][i].name + "\n";
                     insertHtml += "PRICE" + resp[2][i].price + "\n";
